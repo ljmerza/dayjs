@@ -27,7 +27,7 @@ describe('StartOf EndOf', () => {
 })
 
 
-it('Add Time days', () => {
+it('Add Time days  with Amount Number', () => {
   expect(dayjs().add(1, 's').valueOf()).toBe(moment().add(1, 's').valueOf())
   expect(dayjs().add(1, 'seconds').valueOf()).toBe(moment().add(1, 'seconds').valueOf())
   expect(dayjs().add(1, 'm').valueOf()).toBe(moment().add(1, 'm').valueOf())
@@ -41,6 +41,22 @@ it('Add Time days', () => {
   expect(dayjs().add(1, 'M').valueOf()).toBe(moment().add(1, 'M').valueOf())
   expect(dayjs().add(1, 'y').valueOf()).toBe(moment().add(1, 'y').valueOf())
   expect(dayjs('20111031').add(1, 'months').valueOf()).toBe(moment('20111031').add(1, 'months').valueOf())
+})
+
+it('Add Time days with Amount String', () => {
+  expect(dayjs().add('1', 's').valueOf()).toBe(moment().add('1', 's').valueOf())
+  expect(dayjs().add('1', 'seconds').valueOf()).toBe(moment().add('1', 'seconds').valueOf())
+  expect(dayjs().add('1', 'm').valueOf()).toBe(moment().add('1', 'm').valueOf())
+  expect(dayjs().add('1', 'minutes').valueOf()).toBe(moment().add('1', 'minutes').valueOf())
+  expect(dayjs().add('1', 'h').valueOf()).toBe(moment().add('1', 'h').valueOf())
+  expect(dayjs().add('1', 'hours').valueOf()).toBe(moment().add('1', 'hours').valueOf())
+  expect(dayjs().add('1', 'w').valueOf()).toBe(moment().add('1', 'w').valueOf())
+  expect(dayjs().add('1', 'weeks').valueOf()).toBe(moment().add('1', 'weeks').valueOf())
+  expect(dayjs().add('1', 'd').valueOf()).toBe(moment().add('1', 'd').valueOf())
+  expect(dayjs().add('1', 'days').valueOf()).toBe(moment().add('1', 'days').valueOf())
+  expect(dayjs().add('1', 'M').valueOf()).toBe(moment().add('1', 'M').valueOf())
+  expect(dayjs().add('1', 'y').valueOf()).toBe(moment().add('1', 'y').valueOf())
+  expect(dayjs('20111031').add('1', 'months').valueOf()).toBe(moment('20111031').add('1', 'months').valueOf())
 })
 
 it('Subtract Time days', () => {

@@ -178,7 +178,9 @@ class Dayjs {
       return date
     }
     if (['y', C.Y].indexOf(unit) > -1) {
-      return this.set(C.Y, this.$y + number)
+      let date = this.set(C.DATE, 1).set(C.Y, this.$Y + number)
+      date = date.set(C.DATE, Math.min(this.$Y, date.daysInYear()))
+      return date
     }
     let step
     switch (unit) {
@@ -296,6 +298,10 @@ class Dayjs {
 
   daysInMonth() {
     return this.endOf(C.M).$D
+  }
+
+  daysInYear() {
+    return this.endOf(C.Y).$Y
   }
 
   clone() {
